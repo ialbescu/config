@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/alamy/tmp'
+let g:netrw_dirhist_2='/home/alamy'
+let g:netrw_dirhist_3='/tmp'
+let g:netrw_dirhist_4='/var/www/holidays.shape'
+let g:netrw_dirhist_5='/etc/apache2/sites-enabled'
+let g:netrw_dirhist_6='/users/alamy/Documents/Production/saas'
+let g:netrw_dirhist_7='/users/alamy/src/demos/template/assets'
+let g:netrw_dirhist_8='/users/alamy/src/saas/imageApplications/applications/ltuRegistry/dataModel/patch/preprod'
+let g:netrw_dirhist_9='/users/alamy/src/.repo'
