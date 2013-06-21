@@ -334,13 +334,15 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 zstyle ':vcs_info:*' enable git
 precmd () {
-  if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-    zstyle ':vcs_info:*' formats "%{$reset_color%}[%F{green}%b%c%u%F{white}]%{$reset_color%}"
-  } else {
-    zstyle ':vcs_info:*' formats "%{$reset_color%}[%F{green}%b%c%u%F{red}● %F{white}]%{$reset_color%}"
-  }
+  if [ `echo $PWD | grep 'src' | wc -l` -eq 1 ];then
+    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+      zstyle ':vcs_info:*' formats "%{$reset_color%}[%F{green}%b%c%u%F{white}]%{$reset_color%}"
+    } else {
+      zstyle ':vcs_info:*' formats "%{$reset_color%}[%F{green}%b%c%u%F{red}● %F{white}]%{$reset_color%}"
+    }
 
-  vcs_info
+    vcs_info
+  fi
 }
 
 
