@@ -15,10 +15,10 @@ let g:jedi#auto_vim_configuration = 1
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 
 " Project mode
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+"let g:miniBufExplMapWindowNavVim = 0
+"let g:miniBufExplMapWindowNavArrows = 0
+"let g:miniBufExplMapCTabSwitchBufs = 0
+"let g:miniBufExplModSelTarget = 0
 
 " Nerd Tree
 let g:NERDTreeWinPos = "right"
@@ -48,6 +48,7 @@ map P :TlistToggle<CR>
 map <F2> :NERDTreeToggle<CR>
 map M :MiniBufExplorer<CR>
 nmap <F8> :TagbarToggle<CR>
+map ; :CtrlPBuffer
 
 let g:jedi#auto_initialization = 1
 
