@@ -48,7 +48,7 @@ map P :TlistToggle<CR>
 map <F2> :NERDTreeToggle<CR>
 map M :MiniBufExplorer<CR>
 nmap <F8> :TagbarToggle<CR>
-map ; :CtrlPBuffer
+map ; :CtrlPBuffer<CR>
 
 let g:jedi#auto_initialization = 1
 
