@@ -10,12 +10,20 @@
 ################
 
 # Gestion du 'ls' : couleur & ne touche pas aux accents
-alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
+#LINUX
+#alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
+#alias vi='gvim'
+#alias grep='grep --color -n'
+
+#MAC
+alias ls='ls -G'
+alias vi='mvim'
+alias grep='grep --color=always -n'
+function tabtitle {
+  echo -ne "\e]1;$1\a"
+}
 
 # Demande confirmation avant d'écraser un fichier
-alias cp='cp --interactive'
-alias mv='mv --interactive'
-alias rm='rm --interactive'
 
 # Raccourcis pour 'ls'
 alias ll='ls -l'
@@ -32,7 +40,6 @@ alias m='mutt -y'
 alias md='mkdir'
 alias rd='rmdir'
 alias upgrade='apt-get update && apt-get upgrade && apt-get clean'
-alias grep='grep --color -n'
 
 # Arnaud alias
 alias rd='rdesktop -g 1600x980 -k fr'
@@ -42,7 +49,7 @@ alias db='psql -h bdd1 -U postgres'
 alias cleanDBEnv='python -m ltu.saas.testing.regression.ltucommands'
 alias pix='ssh -p 122 root@pt-ltu-01.asp.ltutech.com'
 alias gvim='gvim --remote-silent'
-alias vi='gvim'
+alias mvim='/Applications/MacVim-snapshot-70/mvim --remote-silent'
 alias pep8='ltu-style-check'
 
 #Git alias
@@ -55,7 +62,7 @@ alias gcam='git commit -a --amend'
 alias gcm='git commit --amend'
 alias g_push='git push origin HEAD:refs/for/master'
 alias gpush=git_push $1
-alias gs='git status --color'
+alias gs='git status'
 alias gd='git diff --color'
 alias gl='git log --color'
 alias hook='scp -p -P 29418 git.corp.ltutech.com:hooks/commit-msg .git/hooks/'
