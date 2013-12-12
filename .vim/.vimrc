@@ -10,8 +10,8 @@ set hlsearch
 set number
 set cursorline
 set ruler
-colorscheme solarized
 syntax on
+colorscheme solarized
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Trailing spaces
