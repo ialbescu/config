@@ -7,6 +7,8 @@ set wildmenu
 set expandtab
 set colorcolumn=100
 set hlsearch
+set syntax on
+colorscheme solarized
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:jedi#auto_vim_configuration = 1
@@ -35,12 +37,6 @@ filetype on
 filetype plugin on
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
-"Color
-if has("gui_running")
-  colorscheme earthburn
-else
-  colorscheme darkdesert
-endif
 
 "MAPPING
 map T :TaskList<CR>
