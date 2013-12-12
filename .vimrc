@@ -109,3 +109,4 @@ autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * TlistToggle
 autocmd VimEnter * wincmd l
+autocmd BufEnter * wincmd l
