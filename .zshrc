@@ -17,7 +17,7 @@
 
 #MAC
 alias ls='ls -G'
-alias vi='mvim'
+#alias vi='mvim'
 alias grep='grep --color=always -n'
 function tabtitle {
   echo -ne "\e]1;$1\a"
