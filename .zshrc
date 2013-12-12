@@ -333,28 +333,28 @@ export JAVA_HOME=/cvs/devContribs/linux/jdk1.6.0_02
 # 8. Git                                 #
 ##########################################
 
-autoload -Uz vcs_info
+#autoload -Uz vcs_info
 
-zstyle ':vcs_info:*' stagedstr '%F{28}● '
-zstyle ':vcs_info:*' unstagedstr '%F{11}● '
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
-zstyle ':vcs_info:*' enable git
-precmd () {
-  if [ `echo $PWD | grep 'src' | wc -l` -eq 1 ];then
-    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-      zstyle ':vcs_info:*' formats "%{$reset_color%}[%F{green}%b%c%u%F{white}]%{$reset_color%}"
-    } else {
-      zstyle ':vcs_info:*' formats "%{$reset_color%}[%F{green}%b%c%u%F{red}● %F{white}]%{$reset_color%}"
-    }
+#zstyle ':vcs_info:*' stagedstr '%F{28}● '
+#zstyle ':vcs_info:*' unstagedstr '%F{11}● '
+#zstyle ':vcs_info:*' check-for-changes true
+#zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
+#zstyle ':vcs_info:*' enable git
+#precmd () {
+#  if [ `echo $PWD | grep 'src' | wc -l` -eq 1 ];then
+#    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+#      zstyle ':vcs_info:*' formats "%{$reset_color%}[%F{green}%b%c%u%F{white}]%{$reset_color%}"
+#    } else {
+#      zstyle ':vcs_info:*' formats "%{$reset_color%}[%F{green}%b%c%u%F{red}● %F{white}]%{$reset_color%}"
+#    }
+#
+#    vcs_info
+#  fi
+#}
 
-    vcs_info
-  fi
-}
 
-
-setopt prompt_subst
-RPROMPT='${vcs_info_msg_0_}'
+#setopt prompt_subst
+#RPROMPT='${vcs_info_msg_0_}'
 
 # Prompt couleur (la couleur n'est pas la même pour le root et
 # pour les simples utilisateurs)

@@ -7,12 +7,13 @@ set wildmenu
 set expandtab
 set colorcolumn=100
 set hlsearch
+set number
+set cursorline
+set ruler
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:jedi#auto_vim_configuration = 1
 " Trailing spaces
-"autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufWritePre * call RemoveTrailingWhitespace()
+
 
 " Project mode
 "let g:miniBufExplMapWindowNavVim = 0
@@ -20,15 +21,19 @@ autocmd BufWritePre * call RemoveTrailingWhitespace()
 "let g:miniBufExplMapCTabSwitchBufs = 0
 "let g:miniBufExplModSelTarget = 0
 
-" Nerd Tree
-let g:NERDTreeWinPos = "right"
 
 " Tags
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let g:Tlist_WinWidth = 45
 
 "NerdTree
+let g:NERDShutUp=1
+let NERDTreeKeepTreeInNewTab=1
 let g:NERDTreeWinSize = 40
+let g:NERDTreeWinPos = "left"
+
+" TlistToggle
+let Tlist_Use_Right_Window   = 1
 
 "Omni
 filetype on
@@ -49,8 +54,14 @@ map <F2> :NERDTreeToggle<CR>
 map M :MiniBufExplorer<CR>
 nmap <F8> :TagbarToggle<CR>
 map ; :CtrlPBuffer<CR>
+nmap <silent> <A-S-Up> :wincmd k<CR>
+nmap <silent> <A-S-Down> :wincmd j<CR>
+nmap <silent> <A-S-Left> :wincmd h<CR>
+nmap <silent> <A-S-Right> :wincmd l<CR>
 
+"Jedi
 let g:jedi#auto_initialization = 1
+let g:jedi#auto_vim_configuration = 1
 
 function LTUCheck()
   exec "ltu-style-check --no-pylint --help"
@@ -91,3 +102,10 @@ function RemoveTrailingWhitespace()
     call cursor(b:curline, b:curcol)
   endif
 endfunction
+
+" BOOT on startup
+autocmd BufWritePre * call RemoveTrailingWhitespace()
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * TlistToggle
+autocmd VimEnter * wincmd l
