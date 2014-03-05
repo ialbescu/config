@@ -53,7 +53,7 @@ alias mvim='/Applications/MacVim-snapshot-70/mvim --remote-silent'
 alias pep8='ltu-style-check'
 
 #Git alias
-alias gpull='git stash;git pull origin master;git stash pop;git fetch origin'
+alias gpull='git pull origin master;git stash pop'
 alias gpullr='git pull --rebase origin master'
 alias gri='git rebase --interactive'
 alias gc='git commit'
