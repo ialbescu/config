@@ -47,7 +47,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 "MAPPING
 map T :TaskList<CR>
-map P :TlistToggle<CR>
+map <F3> :TlistToggle<CR>
 map <F2> :NERDTreeToggle<CR>
 map M :MiniBufExplorer<CR>
 nmap <F8> :TagbarToggle<CR>
