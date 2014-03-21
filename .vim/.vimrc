@@ -11,7 +11,7 @@ set number
 set cursorline
 set ruler
 syntax on
-colorscheme solarized
+colorscheme Tomorrow-Night
 set mouse+=a
 set ttymouse=xterm2
 
