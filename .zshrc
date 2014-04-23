@@ -62,7 +62,7 @@ alias gcam='git commit -a --amend'
 alias gcm='git commit --amend'
 alias g_push='git push origin HEAD:refs/for/master'
 alias gpush=git_push $1
-alias gs='git status -sb'
+alias gs='git status'
 alias gd='git diff --color'
 alias gl='git log --color'
 alias hook='scp -p -P 29418 git.corp.ltutech.com:hooks/commit-msg .git/hooks/'
@@ -276,6 +276,13 @@ compinit
 ###########################################
 # 6. LTU Functions                        #
 ###########################################
+
+# allows to grep the parameter in any python file
+function pygrep(){
+  SEARCH_PATH="."
+  [ $# -gt 1 ] && SEARCH_PATH=$2
+  find $SEARCH_PATH -name "*.py" -not -path "./env/*" -and -not -path "./*egg*/*" -exec egrep --color -in $1 {} +
+}
 
 function trace_70 {
   root_folder=`pwd`
