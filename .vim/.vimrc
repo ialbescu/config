@@ -63,6 +63,7 @@ let g:jedi#auto_initialization = 1
 let g:jedi#auto_vim_configuration = 1
 
 function LTUCheck()
+  execute "!echo '---------------------'"
   execute "!ltu-style-check --no-pylint " . bufname("%")
 endfunction
 
