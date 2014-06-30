@@ -67,6 +67,7 @@ alias gd='git diff --color'
 alias gl='git log --color'
 alias hook='scp -p -P 29418 git.corp.ltutech.com:hooks/commit-msg .git/hooks/'
 alias gclone=git_clone $1
+alias glb="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
 
 
 

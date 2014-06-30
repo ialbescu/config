@@ -47,6 +47,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 "MAPPING
 map T :TaskList<CR>
+map C :call LTUCheck()<CR>
 map <F3> :TlistToggle<CR>
 map <F2> :NERDTreeToggle<CR>
 map M :MiniBufExplorer<CR>
@@ -62,7 +63,7 @@ let g:jedi#auto_initialization = 1
 let g:jedi#auto_vim_configuration = 1
 
 function LTUCheck()
-  exec "ltu-style-check --no-pylint --help"
+  execute "!ltu-style-check --no-pylint " . bufname("%")
 endfunction
 
 function! Smart_TabComplete()
