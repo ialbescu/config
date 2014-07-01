@@ -69,7 +69,8 @@ alias hook='scp -p -P 29418 git.corp.ltutech.com:hooks/commit-msg .git/hooks/'
 alias gclone=git_clone $1
 alias glb="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
 
-
+#Caladan Alias
+alias video_update="curl --data-binary '{ \"jsonrpc\": \"2.0\", \"method\": \"VideoLibrary.Scan\", \"id\": \"mybash\"}' -H 'content-type: application/json;' http://localhost:8080/jsonrpc"
 
 #######################################
 # 2. Prompt et définition des touches #
