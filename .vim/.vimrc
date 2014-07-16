@@ -12,7 +12,6 @@ set cursorline
 set ruler
 syntax on
 colorscheme Tomorrow-Night
-set mouse+=a
 set ttymouse=xterm2
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim

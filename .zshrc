@@ -361,7 +361,6 @@ precmd () {
   fi
 }
 
-
 setopt prompt_subst
 RPROMPT='${vcs_info_msg_0_}'
 
