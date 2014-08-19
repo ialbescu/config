@@ -1,3 +1,6 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
 "Parameter
 set mousefocus
 set ts=2
@@ -16,6 +19,18 @@ set mouse+=a
 set ttymouse=xterm2
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+
+" Plugins managed by Vundle
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/syntastic'
+" End of plugins
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
 " Trailing spaces
 
 
@@ -109,3 +124,9 @@ autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * TlistToggle
 autocmd VimEnter * wincmd l
+
+autocmd VimEnter * SyntasticToggleMode
+autocmd VimEnter * SyntasticToggleMode
+
+" Enable ltu python syntastic checker
+let g:syntastic_python_checkers=['ltu']
