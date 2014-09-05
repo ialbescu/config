@@ -43,11 +43,6 @@ alias upgrade='apt-get update && apt-get upgrade && apt-get clean'
 
 # Arnaud alias
 alias rd='rdesktop -g 1600x980 -k fr'
-alias win='rdesktop -g 1600x980 -k fr 10.1.10.208&'
-alias lm='/cvs/devContribs/flexlm/v11.7_lsb_x64/x64_lsb/lmcrypt'
-alias db='psql -h bdd1 -U postgres'
-alias cleanDBEnv='python -m ltu.saas.testing.regression.ltucommands'
-alias pix='ssh -p 122 root@pt-ltu-01.asp.ltutech.com'
 alias gvim='gvim --remote-silent'
 alias mvim='/Applications/MacVim-snapshot-70/mvim --remote-silent'
 alias pep8='ltu-style-check'
@@ -58,19 +53,24 @@ alias gpullr='git pull --rebase origin master'
 alias gri='git rebase --interactive'
 alias gc='git commit'
 alias gca='git commit -a'
-alias gcam='git commit -a --amend'
 alias gcm='git commit --amend'
 alias g_push='git push origin HEAD:refs/for/master'
 alias gpush=git_push $1
 alias gs='git status'
 alias gd='git diff --color'
 alias gl='git log --color'
-alias hook='scp -p -P 29418 git.corp.ltutech.com:hooks/commit-msg .git/hooks/'
 alias gclone=git_clone $1
 alias glb="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
 
 #Caladan Alias
 alias video_update="curl --data-binary '{ \"jsonrpc\": \"2.0\", \"method\": \"VideoLibrary.Scan\", \"id\": \"mybash\"}' -H 'content-type: application/json;' http://localhost:8080/jsonrpc"
+
+#LTU Alias
+alias inttest='nosetests -v --log-config=python/ltu/saas/test_data/logging.conf --with-xunit --xunit-file=integration.xml -m "(_test\.)|(test[^\.]*$)" -a integration_test --no-skip python/ltu'
+alias hook='scp -p -P 29418 git.corp.ltutech.com:hooks/commit-msg .git/hooks/'
+alias win='rdesktop -g 1600x980 -k fr 10.1.10.208&'
+alias cleanDBEnv='python -m ltu.saas.testing.regression.ltucommands'
+alias lm='/cvs/devContribs/flexlm/v11.7_lsb_x64/x64_lsb/lmcrypt'
 
 #######################################
 # 2. Prompt et définition des touches #
