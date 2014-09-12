@@ -62,6 +62,10 @@ alias gl='git log --color'
 alias gclone=git_clone $1
 alias glb="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
 
+# Docker alias
+alias dlist='docker images'
+alias drun=docker_run $1
+
 #Caladan Alias
 alias video_update="curl --data-binary '{ \"jsonrpc\": \"2.0\", \"method\": \"VideoLibrary.Scan\", \"id\": \"mybash\"}' -H 'content-type: application/json;' http://localhost:8080/jsonrpc"
 
@@ -372,3 +376,11 @@ if [ "`id -u`" -eq 0 ]; then
 else
   export PROMPT="%{[36;1m%}%T %{[31m%}%n%{[36;1m%}|%{[33m%}%m %{[32m%}%~%{[33m%} %{[33m%}%#%{[0m%}% %{$reset_color%}%  "
 fi
+
+##############################################
+# 9. Docker                                  #
+##############################################
+
+docker_run() {
+  docker run -it $1 bash
+}
