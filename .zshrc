@@ -333,6 +333,18 @@ function git_push {
   git push origin HEAD:refs/publish/master --receive-pack="git receive-pack ${reviewers}"
 }
 
+function get_submodule_commit {
+  lcd=`pwd`
+  rm -rf /tmp/submodule
+  mkdir -p /tmp/submodule
+  cd /tmp/submodule
+  git clone ssh://git.corp.ltutech.com:29418/product/engine >/dev/null 2>&1
+  cd engine
+  project=`git checkout $1 2>&1 | /bin/grep Project  | sed 's/.*Project: \(.*\)  \(.*\)/Project: \1 \nCommit id: \2/'`
+  echo $project
+  cd $lcd
+}
+
 ##########################################
 # 7. Env                                 #
 ##########################################
