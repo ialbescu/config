@@ -61,6 +61,7 @@ alias gd='git diff --color'
 alias gl='git log --color'
 alias gclone=git_clone $1
 alias glb="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
+alias fuck="git reset --soft HEAD@{1}"
 
 # Docker alias
 alias dlist='docker images'
@@ -334,15 +335,15 @@ function git_push {
 }
 
 function get_submodule_commit {
-  lcd=`pwd`
   rm -rf /tmp/submodule
   mkdir -p /tmp/submodule
   cd /tmp/submodule
-  git clone ssh://git.corp.ltutech.com:29418/product/engine >/dev/null 2>&1
-  cd engine
-  project=`git checkout $1 2>&1 | /bin/grep Project  | sed 's/.*Project: \(.*\)  \(.*\)/Project: \1 \nCommit id: \2/'`
-  echo $project
-  cd $lcd
+  git clone ssh://git.corp.ltutech.com:29418/product/engine
+  project=`git checkout $1 | sed 's/.*Project: \(.*\)  .*/\1/'`
+  cd engine/$project
+  commit_id=`git log | head -1 | sed 's/commit //g'`
+  git show $commit_id
+
 }
 
 ##########################################
