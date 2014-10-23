@@ -72,6 +72,7 @@ alias video_update="curl --data-binary '{ \"jsonrpc\": \"2.0\", \"method\": \"Vi
 
 #LTU Alias
 alias inttest='nosetests -v --log-config=python/ltu/saas/test_data/logging.conf --with-xunit --xunit-file=integration.xml -m "(_test\.)|(test[^\.]*$)" -a integration_test --no-skip python/ltu'
+alias inttest='for python_module in `find ./python/ltu -name "*_test.py"`;do echo $python_module;nosetests -v --log-config=python/ltu/saas/test_data/logging.conf --with-xunit --xunit-file=integration.xml -m "(_test\.)|(test[^\.]*$)" -a integration_test --no-skip $python_module;if [[ $? != 0 ]];then break;fi;done'
 alias hook='scp -p -P 29418 git.corp.ltutech.com:hooks/commit-msg .git/hooks/'
 alias win='rdesktop -g 1600x980 -k fr 10.1.10.208&'
 alias cleanDBEnv='python -m ltu.saas.testing.regression.ltucommands'
