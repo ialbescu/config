@@ -64,6 +64,7 @@ alias glb="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset 
 alias fuck="git reset --soft HEAD@{1}"
 
 # Docker alias
+alias dmacinit='$(boot2docker shellinit)'
 alias dlist='docker images'
 alias drun=docker_run $1
 
