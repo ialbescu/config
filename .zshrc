@@ -1,9 +1,12 @@
-# Created by newuser for 4.3.10
-# /etc/zsh/zshrc ou ~/.zshrc
-# Fichier de configuration principal de zsh, lu au lancement des shells interactifs
-# (et non des shells d'interprétation de fichier)
-# Formation Debian GNU/Linux par Alexis de Lattre
-# http://formation-debian.via.ecp.fr/
+#########################
+# 0. Get platform type  #
+#########################
+if [[ "`uname`" == "Darwin" ]];then
+  platform='mac'
+else
+  platform='linux'
+fi
+
 
 ################
 # 1. Les alias #
@@ -11,17 +14,21 @@
 
 # Gestion du 'ls' : couleur & ne touche pas aux accents
 #LINUX
-#alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
-#alias vi='gvim'
-#alias grep='grep --color -n'
+if [[ "$platform" == "linux" ]];then
+  alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
+  alias vi='gvim'
+  alias grep='grep --color -n'
+fi
 
 #MAC
-alias ls='ls -G'
-#alias vi='mvim'
-alias grep='grep --color=always -n'
-function tabtitle {
-  echo -ne "\e]1;$1\a"
-}
+if [[ "$platform" == "linux" ]];then
+  alias ls='ls -G'
+  #alias vi='mvim'
+  alias grep='grep --color=always -n'
+  function tabtitle {
+    echo -ne "\e]1;$1\a"
+  }
+fi
 
 # Demande confirmation avant d'écraser un fichier
 
@@ -396,6 +403,9 @@ fi
 # 9. Docker                                  #
 ##############################################
 
+if [[ "$platform" == "mac" ]];then
+    $(boot2docker shellinit >/dev/null 2>&1)
+fi
 docker_run() {
   docker run -it $1 bash
 }
