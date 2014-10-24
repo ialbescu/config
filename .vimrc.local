@@ -1,3 +1,5 @@
+Bundle 'bufexplorer.zip'
+
 colorscheme Tomorrow-Night      " Change color theme
 set shiftwidth=2                " Use indents of 2 spaces
 set tabstop=2                   " An indentation every four columns
@@ -13,4 +15,8 @@ let g:syntastic_python_checkers = 'ltu-style-check --no-pylint'
 " zg: add word in dictionary
 " zo: open method
 " zc: close method
+"
+" LEADER be: buffer list
 
+map <tab> :bn<CR>
+map <S-tab> :bp<CR>
