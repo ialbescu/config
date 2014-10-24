@@ -21,9 +21,10 @@ if [[ "$platform" == "linux" ]];then
 fi
 
 #MAC
-if [[ "$platform" == "linux" ]];then
+if [[ "$platform" == "mac" ]];then
   alias ls='ls -G'
-  #alias vi='mvim'
+  alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+  alias vim='vi'
   alias grep='grep --color=always -n'
   function tabtitle {
     echo -ne "\e]1;$1\a"
