@@ -16,7 +16,6 @@ fi
 #LINUX
 if [[ "$platform" == "linux" ]];then
   alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
-  alias vi='gvim'
   alias grep='grep --color -n'
 fi
 
@@ -26,10 +25,11 @@ if [[ "$platform" == "mac" ]];then
   alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
   alias vim='vi'
   alias grep='grep --color=always -n'
-  function tabtitle {
-    echo -ne "\e]1;$1\a"
-  }
 fi
+
+function tabtitle {
+  echo -ne "\e]1;$1\a"
+}
 
 # Demande confirmation avant d'écraser un fichier
 
