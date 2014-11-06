@@ -39,6 +39,7 @@ alias la='ls -a'
 alias lla='ls -la'
 
 # Quelques alias pratiques
+alias vim='vi -u /dev/null'
 alias c='clear'
 alias less='less --quiet'
 alias s='cd ..'
@@ -153,6 +154,12 @@ then
   fi
 fi
 
+# Personnal variables
+
+m="/data/music/Music"
+d="/data/downloads/deluge"
+f="/data/video/Films"
+s="/data/video/Series"
 
 ###########################################
 # 3. Options de zsh (cf 'man zshoptions') #
@@ -353,6 +360,15 @@ function get_submodule_commit {
   commit_id=`git log | head -1 | sed 's/commit //g'`
   git show $commit_id
 
+}
+
+##########################################
+# 6-1. Home functions                    #
+##########################################
+function flac2mp3 {
+  mkdir $1
+  parallel -j 4 'a={}; avconv -i "$a" -c:a libmp3lame -b:a 320k "${a[@]/%flac/mp3}"' ::: *.flac
+  mv *.mp3 $1
 }
 
 ##########################################
