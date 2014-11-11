@@ -4,6 +4,7 @@ set tabstop=2                   " An indentation every four columns
 set softtabstop=2               " Let backspace delete indent
 set nospell
 set paste
+set expandtab
 
 let g:indent_guides_enable_on_vim_startup = 0
 "let g:syntastic_python_checkers = 'ltu-style-check --no-pylint'
