@@ -26,6 +26,7 @@ if [[ "$platform" == "mac" ]];then
   alias vim='vi'
   alias grep='grep --color=always -n'
   alias forward_django_port_for_vm='VBoxManage controlvm boot2docker-vm natpf1 "django,tcp,127.0.0.1,8000,,8000"'
+  alias dinit='$(boot2docker shellinit)'
 fi
 
 function tabtitle {
@@ -421,7 +422,7 @@ fi
 ##############################################
 
 if [[ "$platform" == "mac" ]];then
-    $(boot2docker shellinit >/dev/null 2>&1)
+  dinit
 fi
 docker_run() {
   docker run -it $1 bash
