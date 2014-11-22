@@ -25,6 +25,7 @@ if [[ "$platform" == "mac" ]];then
   alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
   alias vim='vi'
   alias grep='grep --color=always -n'
+  alias forward_django_port_for_vm='VBoxManage controlvm boot2docker-vm natpf1 "django,tcp,127.0.0.1,8000,,8000"'
 fi
 
 function tabtitle {
