@@ -5,6 +5,9 @@ set softtabstop=2               " Let backspace delete indent
 set nospell
 set paste
 set expandtab
+set columns=80
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 let g:indent_guides_enable_on_vim_startup = 0
 "let g:syntastic_python_checkers = 'ltu-style-check --no-pylint'
