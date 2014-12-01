@@ -1,7 +1,7 @@
 colorscheme Tomorrow-Night      " Change color theme
-set shiftwidth=2                " Use indents of 2 spaces
-set tabstop=2                   " An indentation every four columns
-set softtabstop=2               " Let backspace delete indent
+set shiftwidth=4                " Use indents of 2 spaces
+set tabstop=4                   " An indentation every four columns
+set softtabstop=4               " Let backspace delete indent
 set nospell
 set paste
 set expandtab
