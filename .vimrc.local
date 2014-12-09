@@ -4,7 +4,7 @@ set softtabstop=4               " Let backspace delete indent
 set shiftwidth=4
 set nospell
 set paste
-autocmd filetype python set expandtab
+set expandtab
 autocmd filetype python set columns=80
 autocmd filetype python highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 autocmd filetype python match OverLength /\%81v.\+/
