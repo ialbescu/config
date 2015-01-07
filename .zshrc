@@ -344,7 +344,7 @@ function git_push {
   for i in {1..10};do
     reviewer=`echo $1, | cut -d, -f $i -s`
     if [ $reviewer ];then
-      reviewers="${reviewers} --reviewer=${reviewer}@ltutech.com"
+      reviewers="${reviewers} --reviewer=${reviewer}"
     else
       break
     fi
