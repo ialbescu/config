@@ -73,6 +73,7 @@ alias gl='git log --color'
 alias gclone=git_clone $1
 alias glb="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
 alias fuck="git reset --soft HEAD@{1}"
+alias gfollow='git log --follow -p'
 
 # Docker alias
 alias dlist='docker images'
