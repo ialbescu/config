@@ -5,7 +5,6 @@ set shiftwidth=4
 set nospell
 set paste
 set expandtab
-autocmd filetype python set columns=80
 autocmd filetype python highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 autocmd filetype python match OverLength /\%81v.\+/
 
@@ -48,3 +47,6 @@ let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
+
+" Virtual env
+let g:pymode_virtualenv = 1
