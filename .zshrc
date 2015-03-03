@@ -56,7 +56,6 @@ alias upgrade='apt-get update && apt-get upgrade && apt-get clean'
 alias rd='rdesktop -g 1600x980 -k fr'
 alias gvim='gvim --remote-silent'
 alias mvim='/Applications/MacVim-snapshot-70/mvim --remote-silent'
-alias pep8='ltu-style-check'
 
 #Git alias
 alias gpull='git pull origin master'
