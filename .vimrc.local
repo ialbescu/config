@@ -25,3 +25,26 @@ let g:indent_guides_enable_on_vim_startup = 0
 map <tab> :bn<CR>
 map <S-tab> :bp<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+
+"Trailing WhiteSpaces
+function RemoveTrailingWhitespace()
+  if &ft != "diff"
+    let b:curcol = col(".")
+    let b:curline = line(".")
+    silent! %s/\s\+$//
+    silent! %s/\(\s*\n\)\+\%$//
+    call cursor(b:curline, b:curcol)
+  endif
+endfunction
+"BOOT on startup
+autocmd BufWritePre * call RemoveTrailingWhitespace()
+
+" JEDI
+let g:jedi#auto_initialization = 1
+let g:jedi#auto_vim_configuration = 1
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>r"
