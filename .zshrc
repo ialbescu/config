@@ -51,6 +51,7 @@ alias m='mutt -y'
 alias md='mkdir'
 alias rd='rmdir'
 alias upgrade='apt-get update && apt-get upgrade && apt-get clean'
+alias sa='eval `ssh-agent`;ssh-add'
 
 # Arnaud alias
 alias rd='rdesktop -g 1600x980 -k fr'
