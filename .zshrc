@@ -9,6 +9,8 @@ fi
 
 if [[ "$platform" == "mac" ]];then
   export PATH=/Library/PostgreSQL/9.4/bin:$PATH
+  # Psycopg 2 hack
+  export DYLD_FALLBACK_LIBRARY_PATH=/Library/PostgreSQL/9.4/lib:$DYLD_LIBRARY_PATH
 fi
 
 ################
