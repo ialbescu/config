@@ -1,5 +1,5 @@
 #########################
-# 0. Get platform type  #
+# 0. ENV  #
 #########################
 if [[ "`uname`" == "Darwin" ]];then
   platform='mac'
@@ -7,6 +7,9 @@ else
   platform='linux'
 fi
 
+if [[ "$platform" == "mac" ]];then
+  export PATH=/Library/PostgreSQL/9.4/bin:$PATH
+fi
 
 ################
 # 1. Les alias #
@@ -27,6 +30,7 @@ if [[ "$platform" == "mac" ]];then
   alias grep='grep --color=always -n'
   alias forward_django_port_for_vm='VBoxManage controlvm boot2docker-vm natpf1 "django,tcp,127.0.0.1,8000,,8000"'
   alias dinit='$(boot2docker shellinit)'
+  alias virtualenv='/Library/Frameworks/Python.framework/Versions/3.4/bin/virtualenv'
 fi
 
 function tabtitle {
@@ -57,6 +61,7 @@ alias sa='eval `ssh-agent`;ssh-add'
 alias rd='rdesktop -g 1600x980 -k fr'
 alias gvim='gvim --remote-silent'
 alias mvim='/Applications/MacVim-snapshot-70/mvim --remote-silent'
+alias tt='tabtitle'
 
 #Git alias
 alias gpull='git pull origin master'
