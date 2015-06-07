@@ -433,7 +433,7 @@ fi
 ##############################################
 
 if [[ "$platform" == "mac" ]];then
-  dinit
+  #dinit
 fi
 docker_run() {
   docker run -it $1 bash
