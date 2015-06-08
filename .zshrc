@@ -434,6 +434,10 @@ else
   export PROMPT="%{[36;1m%}%T %{[31m%}%n%{[36;1m%}|%{[33m%}%m %{[32m%}%~%{[33m%} %{[33m%}%#%{[0m%}% %{$reset_color%}%  "
 fi
 
+if [[ "$platform" == "mac" ]];then
+    git config --global core.editor /Applications/MacVim.app/Contents/MacOS/Vim
+fi
+
 ##############################################
 # 9. Docker                                  #
 ##############################################
