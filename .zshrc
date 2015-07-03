@@ -323,8 +323,16 @@ compinit
 function pygrep(){
   SEARCH_PATH="."
   [ $# -gt 1 ] && SEARCH_PATH=$2
+  find $SEARCH_PATH -name "*.py" -not -path "./env/*" -and -not -path "./*egg*/*" -exec egrep --color -n $1 {} +
+}
+
+function pygrepi(){
+  SEARCH_PATH="."
+  [ $# -gt 1 ] && SEARCH_PATH=$2
   find $SEARCH_PATH -name "*.py" -not -path "./env/*" -and -not -path "./*egg*/*" -exec egrep --color -in $1 {} +
 }
+
+
 
 function trace_70 {
   root_folder=`pwd`
