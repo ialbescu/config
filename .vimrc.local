@@ -9,7 +9,6 @@ autocmd filetype python highlight OverLength ctermbg=red ctermfg=white guibg=#59
 autocmd filetype python match OverLength /\%100v.\+/
 
 let g:indent_guides_enable_on_vim_startup = 0
-"let g:syntastic_python_checkers = 'ltu-style-check'
 
 
 " HELP
@@ -39,8 +38,8 @@ endfunction
 "BOOT on startup
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 
-" Virtual env
-let g:pymode_virtualenv = 1
-
 " Python
 let g:pymode_options_max_line_length=100
+
+" Virtual env
+let g:pymode_virtualenv = 1
