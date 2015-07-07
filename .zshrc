@@ -103,8 +103,9 @@ alias win='rdesktop -g 1600x980 -k fr 10.1.10.208&'
 alias cleanDBEnv='python -m ltu.saas.testing.regression.ltucommands'
 alias lm='/cvs/devContribs/flexlm/v11.7_lsb_x64/x64_lsb/lmcrypt'
 
-# Ginerativ aliases
-gen_locales='python manage.py makemessages -l fr;python manage.py makemessages -l en'
+# Django aliases
+alias gen_locales='python manage.py makemessages -l fr;python manage.py makemessages -l en'
+alias mt='python $VIRTUAL_ENV/../django/manage.py test'
 
 #######################################
 # 2. Prompt et définition des touches #
