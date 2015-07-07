@@ -23,6 +23,8 @@ let g:indent_guides_enable_on_vim_startup = 0
 map <tab> :bn<CR>
 map <S-tab> :bp<CR>
 map dc :bd<CR>
+map gb :.,.:Gblame<CR>
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
 "Trailing WhiteSpaces
