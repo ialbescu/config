@@ -1,1 +1,2 @@
 Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'davidhalter/jedi-vim'
