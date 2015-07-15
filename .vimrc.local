@@ -46,3 +46,6 @@ let g:pymode_options_max_line_length=100
 
 " Virtual env
 let g:pymode_virtualenv = 1
+
+" Macro
+let @p="wbveyOprint(p"
